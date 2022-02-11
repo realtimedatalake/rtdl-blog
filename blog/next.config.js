@@ -52,22 +52,11 @@ const securityHeaders = [
   },
 ]
 
-const withOptimizedImages = require('next-optimized-images');
-
-module.exports = withBundleAnalyzer(withOptimizedImages({
-  optimizeImages: true,
-  optimizeImagesInDev: true,
-  handleImages: ['jpeg', 'png', 'webp', 'gif'],
-  responsive: {
-    adapter: require('responsive-loader/sharp')
-  },
+module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
-  },
-  images: {
-    disableStaticImages: true,
   },
   async headers() {
     return [
@@ -85,7 +74,7 @@ module.exports = withBundleAnalyzer(withOptimizedImages({
           loader: 'file-loader',
           options: {
             publicPath: '/_next',
-            name: 'static/media/[name].[hash].[ext]',
+            name: 'blog/static/media/[name].[hash].[ext]',
           },
         },
       ],
@@ -108,4 +97,4 @@ module.exports = withBundleAnalyzer(withOptimizedImages({
 
     return config
   },
-}))
+})

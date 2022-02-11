@@ -1,6 +1,6 @@
 ---
 name: Gavin Johnson
-avatar: /static/images/authors/avatars/gavin-johnson.png
+avatar: /blog/static/authors/avatars/gavin-johnson.png
 occupation: Co-Creator of rtdl
 company: rtdl
 email: gavin@rtdl.io
