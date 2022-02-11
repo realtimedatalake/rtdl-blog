@@ -11,9 +11,9 @@ data lake. Please go to rtdl's repo and give it a star.
 ## How to Use 🌱 
   * Clone the repo and cd into its folder.
   * Run `npm install`.
-  * To run rtdl's website locally in dev mode, run `npm run dev`. You can 
+  * To run rtdl's blog locally in dev mode, run `npm run dev`. You can 
     view the site at [http://localhost:3000/](http://localhost:3000/).
-  * To build rtdl's wesite locally to the `/out` folder, run `npm run build-prod`.
+  * To build rtdl's blog locally to the `/out` folder, run `npm run build-prod`.
 
 ## License 🤝
 [MIT](./LICENSE)

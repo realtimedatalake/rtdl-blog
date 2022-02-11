@@ -52,7 +52,13 @@ const securityHeaders = [
   },
 ]
 
-module.exports = withBundleAnalyzer({
+const withOptimizedImages = require('next-optimized-images');
+
+module.exports = withBundleAnalyzer(withOptimizedImages({
+  handleImages: ['jpeg', 'png', 'webp', 'gif'],
+  imagesOutputPath: 'blog/static/${imagesFolder}/',
+  optimizeImagesInDev: true,
+  optimizeImages: true,
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   eslint: {
@@ -97,4 +103,4 @@ module.exports = withBundleAnalyzer({
 
     return config
   },
-})
+}))
