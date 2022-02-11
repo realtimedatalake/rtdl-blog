@@ -7,7 +7,7 @@
     "start": "next start",
     "build-stats": "cross-env ANALYZE=true npm next build",
     "export": "next export",
-    "build-prod": "next build && node ./scripts/generate-sitemap && next export -o out/blog/",
+    "build-prod": "next build && node ./scripts/generate-sitemap && next export -o out/",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts"
   },
   "dependencies": {
