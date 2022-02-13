@@ -55,7 +55,7 @@ const securityHeaders = [
 const withOptimizedImages = require('next-optimized-images');
 
 module.exports = withBundleAnalyzer(withOptimizedImages({
-  basePath: '/blog',
+  // basePath: '/blog',
   handleImages: ['jpeg', 'png', 'webp', 'gif'],
   optimizeImagesInDev: true,
   optimizeImages: true,
