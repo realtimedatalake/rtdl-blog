@@ -10,6 +10,7 @@ export default function ListLayout({
   title,
   initialDisplayPosts = [],
   pagination,
+  showDesc = false,
   linkBlog = false,
   linkTags = false,
 }) {
@@ -30,6 +31,11 @@ export default function ListLayout({
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
+          {showDesc && (
+            <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+              {siteMetadata.description}
+            </p>
+          )}
           <div className="relative max-w-lg">
             <input
               aria-label="Search articles"
@@ -56,7 +62,7 @@ export default function ListLayout({
           {linkBlog && (
             <div className="pt-1 xl:pt-2">
               <Link
-                href="/blog"
+                href="/"
                 className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
               >
                 &larr; Back to the blog
@@ -66,7 +72,7 @@ export default function ListLayout({
           {linkTags && (
             <div className="pt-1 xl:pt-2">
               <Link
-                href="/blog/tags"
+                href="/tags"
                 className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
               >
                 All Tags &rarr;
@@ -90,7 +96,7 @@ export default function ListLayout({
                   <div className="space-y-3 xl:col-span-3">
                     <div>
                       <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                        <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
+                        <Link href={`/${slug}`} className="text-gray-900 dark:text-gray-100">
                           {title}
                         </Link>
                       </h3>

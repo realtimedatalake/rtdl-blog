@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+/node_modules/
 /.pnp
 .pnp.js
 
@@ -9,17 +9,17 @@
 /coverage
 
 # next.js
-/.next/
+.next/
 /out/
-/public/blog/sitemap.xml
+/public/sitemap.xml
 .vercel
 
 # production
 /build
 *.xml
 # rss feeds
-/public/blog/feed.xml 
-/publc/blog/tags/
+/public/feed.xml
+/publc/tags/ 
 
 # misc
 .DS_Store

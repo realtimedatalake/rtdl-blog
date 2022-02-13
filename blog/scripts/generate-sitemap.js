@@ -11,7 +11,7 @@ const siteMetadata = require('../data/siteMetadata')
     'pages/*.tsx',
     'data/blog/**/*.mdx',
     'data/blog/**/*.md',
-    'public/blog/tags/**/*.xml',
+    'public/tags/**/*.xml',
     '!pages/_*.js',
     '!pages/_*.tsx',
     '!pages/api',
@@ -41,7 +41,7 @@ const siteMetadata = require('../data/siteMetadata')
                   .replace('/feed.xml', '')
                 const route = path === '/index' ? '' : path
 
-                if (page.search('pages/404.') > -1 || page.search(`pages/blog/[...slug].`) > -1) {
+                if (page.search('pages/404.') > -1 || page.search(`pages/[...slug].`) > -1) {
                   return
                 }
                 return `
@@ -60,5 +60,5 @@ const siteMetadata = require('../data/siteMetadata')
   })
 
   // eslint-disable-next-line no-sync
-  fs.writeFileSync('public/blog/sitemap.xml', formatted)
+  fs.writeFileSync('public/sitemap.xml', formatted)
 })()

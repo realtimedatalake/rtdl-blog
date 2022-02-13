@@ -29,7 +29,7 @@ export default function Tags({ tags }) {
               <div key={t} className="mt-2 mb-2 mr-5">
                 <Tag text={t} />
                 <Link
-                  href={`/blog/tags/${kebabCase(t)}`}
+                  href={`/tags/${kebabCase(t)}`}
                   className="-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300"
                 >
                   {` (${tags[t]})`}
@@ -41,7 +41,7 @@ export default function Tags({ tags }) {
       </div>
       <div className="pt-4 xl:pt-8">
         <Link
-          href="/blog"
+          href="/"
           className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
         >
           &larr; Back to the blog

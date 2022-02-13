@@ -55,8 +55,8 @@ const securityHeaders = [
 const withOptimizedImages = require('next-optimized-images');
 
 module.exports = withBundleAnalyzer(withOptimizedImages({
+  basePath: '/blog',
   handleImages: ['jpeg', 'png', 'webp', 'gif'],
-  imagesOutputPath: 'blog/static/${imagesFolder}/',
   optimizeImagesInDev: true,
   optimizeImages: true,
   reactStrictMode: true,
@@ -79,8 +79,8 @@ module.exports = withBundleAnalyzer(withOptimizedImages({
         {
           loader: 'file-loader',
           options: {
-            publicPath: '/blog/_next',
-            name: 'blog/static/media/[name].[hash].[ext]',
+            publicPath: '/_next',
+            name: 'static/media/[name].[hash].[ext]',
           },
         },
       ],

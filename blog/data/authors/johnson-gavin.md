@@ -1,7 +1,7 @@
 ---
 name: Gavin Johnson
-avatar: /blog/static/authors/avatars/gavin-johnson.png
-occupation: Co-Creator of rtdl
+avatar: /blog/static/images/authors/avatars/johnson-gavin.png
+occupation: Co-Creator of rtdl. PMM at Segment.
 company: rtdl
 email: gavin@rtdl.io
 twitter: https://twitter.com/gavinjtech

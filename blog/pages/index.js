@@ -25,6 +25,7 @@ export default function Blog({ posts, initialDisplayPosts, pagination }) {
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
         title="rtdl ⚡️ Blog"
+        showDesc="true"
         linkTags="true"
       />
     </>
