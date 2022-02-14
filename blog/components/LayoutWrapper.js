@@ -6,6 +6,7 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import GitHubButton from 'react-github-btn'
 
 const LayoutWrapper = ({ children }) => {
   return (
@@ -39,6 +40,17 @@ const LayoutWrapper = ({ children }) => {
                   {link.title}
                 </Link>
               ))}
+            </div>
+            <div className="hidden sm:block">
+              <GitHubButton
+                href="https://github.com/realtimedatalake/rtdl"
+                data-color-scheme="no-preference: light_high_contrast; light: light_high_contrast; dark: light_high_contrast;"
+                data-size="large"
+                data-show-count="true"
+                aria-label="Star realtimedatalake/rtdl on GitHub"
+              >
+                Star
+              </GitHubButton>
             </div>
             <ThemeSwitch />
             <MobileNav />

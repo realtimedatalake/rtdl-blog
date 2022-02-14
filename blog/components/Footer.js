@@ -5,7 +5,29 @@ import SocialIcon from '@/components/social-icons'
 export default function Footer() {
   return (
     <footer>
-      <div className="mt-16 flex flex-col items-center">
+      <div className="mt-16 flex flex-col items-center space-y-6">
+        <ul className="navbar mt-5 flex flex-row justify-center space-x-6 font-medium text-xl text-gray-800">
+          <li>
+            <Link href="https://rtdl.io">
+              <a>⚡️ Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="https://rtdl.io/docs/">
+              <a>⚡️ Docs</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/">
+              <a>⚡️ Blog</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="https://github.com/realtimedatalake/rtdl">
+              <a>⚡️ GitHub</a>
+            </Link>
+          </li>
+        </ul>
         <div className="mb-3 flex space-x-4">
           <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="6" />
           <SocialIcon kind="github" href={siteMetadata.github} size="6" />
@@ -15,8 +37,7 @@ export default function Footer() {
           <SocialIcon kind="twitter" href={siteMetadata.twitter} size="6" />
         </div>
         <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>{`© ${new Date().getFullYear()}`}</div>
-          <Link href={siteMetadata.homeLink}>{siteMetadata.title}</Link>
+          <div>{`© ${new Date().getFullYear()} ${siteMetadata.title}`}</div>
         </div>
       </div>
     </footer>

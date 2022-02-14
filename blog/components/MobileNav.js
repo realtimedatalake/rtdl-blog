@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from './Link'
 import headerNavLinks from '@/data/headerNavLinks'
+import GitHubButton from 'react-github-btn'
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
@@ -69,6 +70,17 @@ const MobileNav = () => {
               </Link>
             </div>
           ))}
+          <div key="Github" className="px-12 py-4">
+            <GitHubButton
+              href="https://github.com/realtimedatalake/rtdl"
+              data-color-scheme="no-preference: light_high_contrast; light: light_high_contrast; dark: light_high_contrast;"
+              data-size="large"
+              data-show-count="true"
+              aria-label="Star realtimedatalake/rtdl on GitHub"
+            >
+              Star
+            </GitHubButton>
+          </div>
         </nav>
       </div>
     </div>

@@ -53,8 +53,9 @@ const securityHeaders = [
 ]
 
 const withOptimizedImages = require('next-optimized-images');
+const withTM = require("next-transpile-modules")(["react-github-btn"]);
 
-module.exports = withBundleAnalyzer(withOptimizedImages({
+module.exports = withBundleAnalyzer(withOptimizedImages(withTM({
   basePath: '/blog',
   handleImages: ['jpeg', 'png', 'webp', 'gif'],
   optimizeImagesInDev: true,
@@ -103,4 +104,4 @@ module.exports = withBundleAnalyzer(withOptimizedImages({
 
     return config
   },
-}))
+})))
