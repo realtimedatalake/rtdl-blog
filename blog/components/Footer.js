@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="mt-16 flex flex-col items-center space-y-6">
-        <ul className="navbar mt-5 flex flex-row justify-center space-x-6 font-medium text-xl text-gray-800">
+        <ul className="navbar mt-5 flex flex-row justify-center space-x-6 text-xl font-medium text-gray-800">
           <li>
             <Link href="https://rtdl.io">
               <a>⚡️ Home</a>
