@@ -23,7 +23,7 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link href="https://github.com/realtimedatalake/rtdl">
+            <Link href="https://github.com/realtimedatalake/rtdl" newWindow="true">
               <a>⚡️ GitHub</a>
             </Link>
           </li>
