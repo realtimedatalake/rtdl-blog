@@ -10,7 +10,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/realtimedatalake/rtdl-blog',
   siteLogo: '/static/images/rtdl-logo.png',
   image: '/static/images/rtdl-logo.png',
-  // socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/og-image.png',
   // email: 'gavin@rtdl.io',
   github: 'https://github.com/realtimedatalake/rtdl',
   twitter: 'https://twitter.com/rtdlio',
