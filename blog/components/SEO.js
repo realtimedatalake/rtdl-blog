@@ -81,7 +81,8 @@ export const BlogSEO = ({ authorDetails, title, summary, date, lastmod, url, ima
   const featuredImages = imagesArr.map((img) => {
     return {
       '@type': 'ImageObject',
-      url: `${siteMetadata.siteUrl}${img}`,
+      // url: `${siteMetadata.siteUrl}${img}`,
+      url: `${siteMetadata.homeLink}${img}`,
     }
   })
 
