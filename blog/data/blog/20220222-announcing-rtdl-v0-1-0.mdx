@@ -2,7 +2,7 @@
 title: 'Announcing rtdl v0.1.0'
 date: '2022-02-22'
 tags: ['product', 'launch']
-draft: true
+draft: false
 summary: "rtdl v0.1.0 is now available. It's the easiest way to build and maintain a real-time data lake, and it works on AWS, GCP, and Azure."
 images: ['/blog/static/images/blog/20220222-announcing-rtdl-v0-1-0/og-image.png',]
 authors: ['johnson-gavin',]
@@ -12,18 +12,17 @@ authors: ['johnson-gavin',]
 ***The easiest way to build a real-time data lake on AWS, GCP, and Azure***  
   
 About 6 months ago, I had a question that I couldn’t find a great answer to. I’d spent the last 
-few years of my career working in tech for companies that mad data tools. I’d become familiar with 
-the tool ecosystem of and common use cases across a data stack. Yet, I couldn’t figure out why 
-real-time data – more specifically, near real-time data, with latencies in the seconds – was so 
-difficult.  
+few years of my career working in tech for companies that made data tools. I’d become familiar 
+with the tool ecosystem and common use cases across a data stack. Yet, I couldn’t figure out why 
+getting real-time data – or at least near real-time data – for analysis was so difficult.  
   
 Databricks is making data lakes and the lakehouse architecture popular, but even their real-time 
-solutions take a lot of work and frequently can’t get latencies down to seconds or a minute.  
+solutions take a lot of work to set up and frequently can’t get latencies down to seconds or a minute.  
   
 I knew that solutions existed. I’d seen parts of them and had them detailed by data teams at many 
 different companies. They are all custom-built though. Why aren’t there any tools available that 
-you can just plug a Kafka stream or a webhook from Segment into that will automatically build 
-you a real-time data lake?  
+you can just plug a Kafka stream or a webhook from Segment into that will automatically build you 
+a real-time data lake?  
   
 Now there is. [rtdl](https://rtdl.io) is the easiest way to build and maintain a real-time data 
 lake. It works on AWS, GCP, and Azure, and it’s open source.
@@ -36,11 +35,12 @@ BI and ML tools – just like a data warehouse. rtdl can build your real-time da
 GCP Cloud Storage, and Azure Blob Storage.
 
 ## How does rtdl work?
-You configure a record in rtdl. A stream includes authentication information for the data store 
-your data lake will be built in, data lake configuration options, and identifiers - an id and 
-an alternate id - to be included in data payloads sent to rtdl. Once a stream is configured, any 
-JSON payload sent to rtdl that includes the same id or alternate id as the stream will be processed 
-into Parquet and stored in the data store and as defined in the stream.  
+You configure a stream in rtdl. A stream includes authentication information for the data store 
+your data lake will be built in, data lake configuration options, and identifiers – an id and an 
+alternate id, like a Write Key or Source ID from Segment – to be included in data payloads sent 
+to rtdl. Once a stream is configured, any JSON payload sent to rtdl that includes the same id 
+or alternate id as the stream will be processed into Parquet and stored in the data store and 
+as defined in the stream.  
   
 As your data lake is being built, it is also configured in Dremio. So you can query your data in 
 real-time via Dremio’s web UI or your favorite SQL, BI, and analytics tools with Dremio’s ODBC 
