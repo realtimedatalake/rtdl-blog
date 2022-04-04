@@ -1,0 +1,49 @@
+---
+title: 'Announcing rtdl v0.1.2: Added support for HDFS, AWS Glue, and Snowflake External Tables'
+date: '2022-04-04'
+tags: ['product', 'launch', 'guide', 'snowflake']
+draft: true
+summary: "rtdl v0.1.2 is now available, with added support for HDFS, AWS Glue, and Snowflake External Tables."
+images: ['/blog/static/images/blog/20220404-announcing-rtdl-v0-1-2-hdfs-aws-glue-snowflake-et/og-image.png',]
+authors: ['johnson-gavin',]
+---
+![banner](/blog/static/images/blog/20220404-announcing-rtdl-v0-1-2-hdfs-aws-glue-snowflake-et/og-image.png)  
+# Announcing rtdl v0.1.2: Added support for HDFS, AWS Glue, and Snowflake External Tables
+It's been almost a month since our last release, and we've been working on a few things. Our big milestones are around adding support for new data lake table formats – specifically [Delta Lake](https://delta.io/), [Apache Iceberg](https://iceberg.apache.org/), and [Apache Hudi](https://hudi.apache.org/) – support to new OLAP layers – specifically [Apache Pinot](https://pinot.apache.org/), [Firebolt](https://www.firebolt.io/), and [Rockset](https://rockset.com/) – and new metadata catalogs – specifically [Project Nessie](https://projectnessie.org/). We had some smaller features ready that were ready to release right now though.
+
+We released rtdl v0.1.2. It adds support for HDFS storage, AWS Glue, and Snowflake External Tables.
+  * HDFS support makes it easy to build a real-time data lake on Hadoop infrastructure. So if you have an  existing big data architecture setup around Hadoop, you can use rtdl with it now.  
+    See [our HDFS docs](https://rtdl.io/setting-up/configure-data-lake/setupwithhdfs) for more info.
+  * [AWS Glue](https://docs.aws.amazon.com/glue/index.html) support registers all metadata for your data lake in AWS Glue. This makes it really easy to access that data in your lake with other AWS services that play well with Glue.  
+    See [our AWS Glue docs](https://rtdl.io/setting-up/configure-metadata-catalog/configureawsglue) for more info.
+  * [Snowflake External Tables](https://docs.snowflake.com/en/user-guide/tables-external.html) support registers all metadata for your data lake with Snowflake External Tables. This gives you read-only access to the data in your lake in Snowflake.  
+    See [our Snowflake External Tables docs](https://rtdl.io/setting-up/configure-metadata-catalog/configuresnowflakeexternaltables) for more info.
+
+
+## Bonus: How to configure rtdl with Snowflake External Tables
+Let's step through an abbreviated tutorial on how to congigure rtdl with Snowflake External Tables.
+
+### Prerequisites
+  * A Snowflake account with a database and user setup.
+  * rtdl setup on AWS as per [this guide](https://rtdl.io/blog/20220307-how-to-build-a-real-time-data-lake-on-aws-with-rtdl-and-segment).
+
+### Tutorial
+  1.  After you have setup rtdl on AWS and created your Snowflake database and user, login to the EC2 instance running rtdl.
+  2.  `cd rtdl`.
+  3.  Shut down rtdl. `sudo docker compose down`.
+  4.  Update your `docker-compose.yml` file. Under the statefun-functions container definition, make sure the following are set correctly as per your Snowflake account:  
+  ```
+  SNOWFLAKE_ENABLED: 1
+  SNOWFLAKE_ACCT: rtdl78315.us-west-2
+  SNOWFLAKE_USER: rtdl-test
+  SNOWFLAKE_PASSWORD: rtdlTextPswd
+  SNOWFLAKE_DB: RTDL_TEST_DB
+  ```
+  5.  Start rtdl again. `sudo docker compose up -d`.
+
+## Try rtdl today
+Do you want real-time data or data lake but don’t have the expertise or time to build your own? Or are you just tired of the toil required to build and maintain a data lake? You should try rtdl. It’s the easiest way to build a real-time data lake.  
+  
+rtdl is unified ingestion layer for every data lake, not one that's bundled with each data lake vendor. So you can stay flexible and choose the right data lake format and analytics layer for your specific use cases. And rtdl works with all of the most popular cloud providers – AWS, Azure, and GCP. Best of all, [it’s open source on GitHub](https://github.com/realtimedatalake/rtdl).  
+  
+Go try rtdl today.
